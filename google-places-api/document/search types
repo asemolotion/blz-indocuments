@@ -1,0 +1,118 @@
+
+***place searches
+
+LatlngBounds or location&radius
+service = new google.maps.places.PlacesService(map);
+service.nearbySearch(request,callback);
+
+return PlaceResult arrays
+
+fields
+/ bounds or (location & radius)
+\keyword
+\minPriceLevel maxPriceLevel (0-4)
+\name
+\opennow
+\rankby  google.maps.places.RankBy.PROMINENCE default
+		 google.maps.places.RankBy.DISTANCE loaction > cant input bounds,radius need atleast 1,keyword,name,type
+\types	check other list		 
+
+need google.maps.places.PlacesServiceStatus == ok 
+
+_______________________________________________________
+
+***Text Searches
+service = new google.maps.places.PlacesService(map);
+service.textSearch(request,callback);
+
+fields
+/query   type parameter is in, query dont need
+\opennow
+\minPrice-maxPrice
+\bounds or (location & radius)
+\types
+
+need google.maps.places.PlacesServiceStatus == ok 
+
+_______________________________________________________
+
+***Rader Search 
+inside adjusted radius
+
+service = new google.maps.places.PlacesService(map);
+service.radarSearch(request, callback);
+
+inside PlaceResult object, only
+>geometry.location
+>place_id  
+
+/ bounds or (location & radius)
+
+one of them 
+/keyword
+/name
+/types
+
+\minPrice-maxPrice
+\opennow
+
+_______________________________________________________
+***Place Details
+
+service = new google.maps.places.PlacesService(map);
+service.getDetails(request, callback);
+
+need PlaceID
+
+>placeResult
+address_components
+formatted_address
+formatted_phone_number
+geometry(location,viewport)
+html_attribution
+icon
+id
+international_phone_number
+name
+utc_offset
+opening_hours(open_now,periods[open,day,time,close etc])
+    	weekday_text
+permanently_closed
+photos[]
+place_id
+rating
+reference
+review
+
+
+
+***Place ID 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
